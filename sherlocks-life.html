@@ -192,8 +192,9 @@
         font-size: 1.2rem;
       }
       .section img {
-        max-width: 100%;
-        height: auto;
+        width: 300px;
+
+        height: 200px;
         border-radius: 5px;
         margin-bottom: 20px;
         transition: transform 0.3s ease;
@@ -201,13 +202,15 @@
       .section img:hover {
         transform: scale(1.05);
       }
+      #image2 {
+        width: 410px;
+      }
       @media (min-width: 768px) {
         .section {
           display: flex;
           align-items: flex-start;
         }
         .section img {
-          width: 300px;
           margin-right: 20px;
           margin-bottom: 0;
         }
@@ -454,7 +457,11 @@
         He had sold a few short stories when, in 1886, he decided to write a
         detective story.
       </p>
-      <div class="section animate-slideInLeft" style="animation-delay: 1s">
+      <div
+        class="section animate-slideInLeft"
+        style="animation-delay: 1s"
+        height="1000px"
+      >
         <img src="./images/IMG_3897 2.JPG" alt="Sherlock Holmes Birthplace" />
         <div>
           <h2>Birthplace</h2>
@@ -466,7 +473,11 @@
         </div>
       </div>
       <div class="section animate-slideInLeft" style="animation-delay: 1.5s">
-        <img src="./images/family.jpg" alt="Sherlock Holmes Family" />
+        <img
+          src="./images/family.jpg"
+          alt="Sherlock Holmes Family"
+          id="image2"
+        />
         <div>
           <h2>Family</h2>
           <p>

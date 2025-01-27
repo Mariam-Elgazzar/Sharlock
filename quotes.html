@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="quotes.css" />
+    <title>basic</title>
+  </head>
+  <body>
+    <nav>
+      <img src="./images/logo2.png" alt="Sherlock" class="logo" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sherlocks-life.html">Sherlock's Life</a></li>
+        <li><a href="famous-cases.html">Famous Cases</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="quotes.html">Quotes</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar">• MEMORABLE QUOTES •</div>
+
+    <div class="container">
+      <div class="quote-section">
+        <div class="quote-content">
+          <div class="quote-text">"You see, but you do not observe."</div>
+          <div class="quote-source">
+            — Arthur Conan Doyle, A Scandal in Bohemia
+          </div>
+          <button class="find-out-more">Find out more</button>
+          <div class="hidden-content">
+            This quote emphasizes Holmes' exceptional observational skills and
+            his ability to notice details that others miss.
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-section">
+        <div class="quote-content">
+          <div class="quote-text">
+            "My name is Sherlock Holmes. It is my business to know what other
+            people do not know."
+          </div>
+          <div class="quote-source">
+            — Arthur Conan Doyle, The Adventure of the Blue Carbuncle
+          </div>
+          <button class="find-out-more">Find out more</button>
+          <div class="hidden-content">
+            This quote perfectly captures Holmes' confidence and his unique role
+            as a consulting detective.
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-section">
+        <div class="quote-content">
+          <div class="quote-text">
+            "Oh, hell! What does that matter?! So we go around the sun! If we
+            went around the moon or round and round the garden like a teddy
+            bear, it wouldn't make any difference! All that matters to me is the
+            work! Without that, my brain rots."
+          </div>
+          <div class="quote-source">
+            — Sherlock BBC series (spoken by Benedict Cumberbatch)
+          </div>
+          <button class="find-out-more">Find out more</button>
+          <div class="hidden-content">
+            This modern interpretation shows Holmes' singular focus on his work
+            and his dismissal of knowledge he deems irrelevant.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------footer------------------------ -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Left Column -->
+          <div class="fade-in">
+            <p class="footer-text">
+              This site is a tribute to the detective who captured my heart with
+              his sharp mind, thrilling adventures, and unforgettable mysteries.
+              Whether you’re already a fan or just curious, I hope you’ll enjoy
+              exploring the world of Sherlock Holmes with me.
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="fade-in">
+            <h3>Content</h3>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Sherlock's Life</a></li>
+              <li><a href="#">Sharlock Holmes Effect</a></li>
+              <li><a href="#">The Art of Deduction</a></li>
+            </ul>
+          </div>
+
+          <!-- Right Column -->
+          <div class="fade-in">
+            <h3>Information</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact me</a></li>
+              <li><a href="#">About me </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom fade-in">
+          <div class="social">
+            <span class="social-text">Let's be friends...</span>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <p>© 2025 The Sherlock Holmes Company. All rights reserved.</p>
+            <p>Made With ❤️ By <a href="#">Neat</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const quoteSections = document.querySelectorAll(".quote-section");
+        const findOutMoreButtons = document.querySelectorAll(".find-out-more");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        quoteSections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        findOutMoreButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const hiddenContent = button.nextElementSibling;
+            if (
+              hiddenContent.style.display === "none" ||
+              hiddenContent.style.display === ""
+            ) {
+              hiddenContent.style.display = "block";
+              button.textContent = "Show less";
+            } else {
+              hiddenContent.style.display = "none";
+              button.textContent = "Find out more";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
