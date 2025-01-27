@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @font-face {
   font-family: "Mythshire";
   src: url("./mythshire-2023-11-27-05-26-20-utc/Fonts/TTF/Mythshire.ttf")
@@ -7,7 +8,9 @@
 }
 
 body {
-  font-family: "Mythshire", sans-serif;
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 @keyframes fadeIn {
@@ -44,10 +47,10 @@ body {
 
 :root {
   /* --primary-color: #1b1b1b; */
-  --primary-color: #000;
-  --accent-color: #d4a037;
-  --text-color: #e6be8a;
-  --background-color: #605442;
+  --primary-color: #000957;
+  --accent-color: #000957;
+  --text-color: #fff;
+  --background-color: #577bc1;
   --basic-color: #fff;
 }
 
@@ -59,7 +62,8 @@ body {
 
 body {
   /* font-family: "Cinzel", serif; */
-  font-family: "Mythshire", sans-serif;
+  /* font-family: "Mythshire", sans-serif; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   font-style: italic;
   background-color: var(--background-color);
@@ -189,8 +193,8 @@ h1 {
 .button {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: var(--accent-color);
-  color: var(--primary-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -396,7 +400,6 @@ h1 {
   color: #d4b88c;
   text-decoration: none;
 }
-
 
 .secure-text {
   font-size: 12px;

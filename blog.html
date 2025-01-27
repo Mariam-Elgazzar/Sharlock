@@ -8,70 +8,121 @@
   </head>
   <body>
     <nav>
-      <img
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo2-6sxmMokPVU1jZCNPvbHegLyFuucEPj.png"
-        alt="Sherlock"
-        class="logo"
-      />
-      <ul>
+      <img src="./images/logo2.png" alt="Sherlock" class="logo" />
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul id="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="sherlocks-life.html">Sherlock's Life</a></li>
-        <li><a href="famous-cases.html">Famous Cases</a></li>
+        <li><a href="cases.html">Famous Cases</a></li>
         <li><a href="media.html">Media</a></li>
-        <li><a href="./blog.html">Blogs</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="quotes.html">Quotes</a></li>
       </ul>
     </nav>
 
     <!-- blog -->
-    <section id="blog">
-      <div class="blog-heading">
-        <span>My Recent Posts</span>
-        <h2>Latest Articles</h2>
-      </div>
-      <!-- blog-container -->
-      <div class="blog-container">
-        <!-- box-1 -->
-        <div class="blog-box">
-          <!-- img -->
-          <div class="blog-img">
-            <img src="images/IMG_3883.JPG" alt="Blog" />
-          </div>
-          <!-- text -->
-          <div class="blog-text">
-            <h3 class="blog-title">The Sherlock Holmes Effect</h3>
-            <p>How the Detective Still Influences Crime Solving Today</p>
-            <p>
-              In the realm of crime-solving, one name stands above all others:
-              Sherlock Holmes. Created by Sir Arthur Conan Doyle over a century
-              ago, this brilliant detective continues to captivate readers and
-              influence crime-solving techniques to this day.
-            </p>
-            <a href="">Read More</a>
-          </div>
-        </div>
-        <!-- box-2 -->
-        <div class="blog-box">
-          <!-- img -->
-          <div class="blog-img">
-            <img src="images/IMG_3888.JPG" alt="Blog" class="img2" />
-          </div>
-          <!-- text -->
-          <div class="blog-text">
-            <h3 class="blog-title">The Art of Deduction</h3>
-            <p>How Sherlock Holmes Mastered the Science of Crime Solving</p>
-            <p>
-              In the world of crime-solving, there is perhaps no name more
-              renowned than Sherlock Holmes. With his keen powers of
-              observation, razor-sharp intellect, and uncanny ability to deduce
-              the truth from the tiniest of clues, Holmes has become the epitome
-              of a master detective.
-            </p>
-            <a href="">Read More</a>
-          </div>
+    <h1 class="title">Last Blogs</h1>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="images/IMG_3881.JPG" alt="" />
+        <div class="card-content">
+          <h1>The Sherlock Holmes Effect</h1>
+          <p>
+            How the Detective Still Influences Crime Solving Today In the realm
+            of crime-solving, one name stands above all others: Sherlock Holmes.
+            Created by Sir Arthur Conan Doyle over a century ago, this brilliant
+            detective continues to captivate readers and influence crime-solving
+            techniques to this day. From his uncanny ability to observe minute
+            details to his astute deductive reasoning skills, Holmes has become
+            a symbol of unparalleled intelligence and intuition.
+          </p>
+          <a href="details1.html" class="btn">Read More</a>
         </div>
       </div>
-    </section>
+      <div class="card">
+        <div class="imgg">
+          <img src="images/IMG_3881.JPG" alt="" />
+        </div>
+        <div class="card-content">
+          <h1>The Art of Deduction</h1>
+          <p>
+            In the world of crime-solving, there is perhaps no name more
+            renowned than Sherlock Holmes. With his keen powers of observation,
+            razor-sharp intellect, and uncanny ability to deduce the truth from
+            the tiniest of clues, Holmes has become the epitome of a master
+            detective. But how did he acquire such exceptional skills? This
+            article delves into the art of deduction and explores how Holmes
+            honed his abilities to solve even the most perplexing of crimes.
+          </p>
+          <a href="details2.html" class="btn btn2">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="fade-in">
+            <p class="footer-text">
+              This site is a tribute to the detective who captured my heart with
+              his sharp mind, thrilling adventures, and unforgettable mysteries.
+              Whether you're already a fan or just curious, I hope you'll enjoy
+              exploring the world of Sherlock Holmes with me.
+            </p>
+          </div>
+          <div class="fade-in">
+            <h3>Content</h3>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Sherlock's Life</a></li>
+              <li><a href="#">Sherlock Holmes Effect</a></li>
+              <li><a href="#">The Art of Deduction</a></li>
+            </ul>
+          </div>
+          <div class="fade-in">
+            <h3>Information</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact me</a></li>
+              <li><a href="#">About me</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom fade-in">
+          <div class="social">
+            <span class="social-text">Let's be friends...</span>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>© 2025 The Sherlock Holmes Company. All rights reserved.</p>
+            <p>Made With ❤️ By <a href="#">Aseel</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navList = document.getElementById("nav-list");
+
+        mobileMenu.addEventListener("click", () => {
+          navList.classList.toggle("active");
+        });
+      });
+    </script>
+    <script src="./script.js"></script>
   </body>
 </html>

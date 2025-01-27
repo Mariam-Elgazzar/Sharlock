@@ -4,419 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sherlock's Life</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
-      @font-face {
-        font-family: "Mythshire";
-        src: url("./mythshire-2023-11-27-05-26-20-utc/Fonts/TTF/Mythshire.ttf")
-          format("truetype");
-      }
-
-      body {
-        font-family: "Mythshire", sans-serif;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideIn {
-        from {
-          transform: translateX(-100%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes glowPulse {
-        0% {
-          text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-        }
-        50% {
-          text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        }
-        100% {
-          text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-        }
-      }
-
-      :root {
-        /* --primary-color: #1b1b1b; */
-        --primary-color: #000;
-        --accent-color: #d4a037;
-        --text-color: #e6be8a;
-        --background-color: #605442;
-        --basic-color: #fff;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        /* font-family: "Cinzel", serif; */
-        font-family: "Mythshire", sans-serif;
-        font-weight: 400;
-        font-style: italic;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-      nav {
-        background-color: var(--background-color);
-        padding: 1rem 2rem;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-      }
-
-      .logo {
-        width: 150px;
-      }
-
-      nav ul {
-        display: flex;
-        list-style: none;
-        gap: 1.5rem;
-        margin-left: auto;
-      }
-
-      nav ul li {
-        display: inline-block;
-      }
-
-      nav a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 1.1rem;
-        position: relative;
-        padding: 0.5rem 1rem;
-        transition: all 0.3s ease;
-      }
-
-      nav a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: var(--accent-color);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      nav a:hover::after {
-        transform: scaleX(1);
-      }
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        background-color: #f0e6d2;
-        color: #333;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      header {
-        background-color: #1a1a1a;
-        color: #f0e6d2;
-        text-align: center;
-        padding: 50px 0;
-        margin-bottom: 30px;
-        position: relative;
-        overflow: hidden;
-      }
-      h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        position: relative;
-        z-index: 2;
-      }
-      .intro {
-        font-family: "Cinzel", serif;
-
-        font-size: 1.2em;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 1s, transform 1s;
-      }
-      .section {
-        font-family: "Cinzel", serif;
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 1s, transform 1s;
-      }
-      .section h2 {
-        font-family: "Mythshire", sans-serif;
-
-        color: var(--accent-color);
-        border-bottom: 2px solid var(--accent-color);
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-      }
-      .section h2 ~ p {
-        font-size: 1.2rem;
-      }
-      .section img {
-        width: 300px;
-
-        height: 200px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
-      }
-      .section img:hover {
-        transform: scale(1.05);
-      }
-      #image2 {
-        width: 410px;
-      }
-      @media (min-width: 768px) {
-        .section {
-          display: flex;
-          align-items: flex-start;
-        }
-        .section img {
-          margin-right: 20px;
-          margin-bottom: 0;
-        }
-      }
-      .fade-in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .carousel-item-video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translateX(-50%) translateY(-50%);
-        opacity: 0.7;
-        z-index: 1;
-      }
-      @media (max-width: 767px) {
-        .carousel-item-video {
-          display: none;
-        }
-        header {
-          background-image: url("//sherlockholmes.com/cdn/shop/files/preview_images/fe8d7fbbfe914c5fa74020d1f4c240ea.thumbnail.0000000000.jpg?v=1697655974&width=960");
-          background-size: cover;
-          background-position: center;
-          height: 300px;
-        }
-        h1 {
-          padding-top: 120px;
-        }
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fadeInUp {
-        animation: fadeInUp 1s ease forwards;
-      }
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      .animate-slideInLeft {
-        animation: slideInLeft 1s ease forwards;
-      }
-
-      .footer {
-        padding: 48px 24px;
-        background: #000;
-        line-height: 1.6;
-        background: #000;
-        color: #d4b88c;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 32px;
-        margin-bottom: 32px;
-      }
-
-      @media (min-width: 768px) {
-        .footer-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      .footer-logo {
-        max-width: 200px;
-        margin-bottom: 16px;
-      }
-
-      .footer-text {
-        font-family: Cinzel;
-
-        font-size: 14px;
-        margin-bottom: 24px;
-        line-height: 1.8;
-      }
-
-      .footer h3 {
-        font-style: italic;
-        font-size: 24px;
-        margin-bottom: 16px;
-      }
-
-      .footer-links {
-        /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-        font-family: Cinzel;
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 8px;
-      }
-
-      .footer-links a {
-        color: #d4b88c;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .footer-links a:hover {
-        color: #fff;
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(212, 184, 140, 0.2);
-        padding-top: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      @media (min-width: 768px) {
-        .footer-bottom {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
-
-      .social {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .social-text {
-        font-size: 14px;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 16px;
-      }
-
-      .social-icons a {
-        color: #d4b88c;
-        transition: color 0.3s ease;
-      }
-
-      .social-icons a:hover {
-        color: #fff;
-      }
-
-      .copyright {
-        text-align: center;
-        font-size: 14px;
-      }
-
-      .copyright a {
-        color: #d4b88c;
-        text-decoration: none;
-      }
-
-      .secure-text {
-        font-size: 12px;
-        text-align: right;
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
+    <link rel="stylesheet" href="sharlocks-life.css" />
+    <style></style>
   </head>
   <body>
+    <!-- Navigation -->
     <nav>
       <img src="./images/logo2.png" alt="Sherlock" class="logo" />
-      <ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul id="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="sherlocks-life.html">Sherlock's Life</a></li>
-        <li><a href="famous-cases.html">Famous Cases</a></li>
+        <li><a href="cases.html">Famous Cases</a></li>
         <li><a href="media.html">Media</a></li>
         <li><a href="blog.html">Blogs</a></li>
         <li><a href="quotes.html">Quotes</a></li>
       </ul>
     </nav>
+
+    <!-- Header -->
     <header>
       <h1 class="animate-fadeInUp">Sherlock's Life</h1>
       <video
@@ -446,6 +58,8 @@
         />
       </video>
     </header>
+
+    <!-- Main Content -->
     <div class="container">
       <p class="intro animate-fadeInUp" style="animation-delay: 0.5s">
         Who is Sherlock Holmes? It's hard to find anyone who hasn't heard of
@@ -457,11 +71,7 @@
         He had sold a few short stories when, in 1886, he decided to write a
         detective story.
       </p>
-      <div
-        class="section animate-slideInLeft"
-        style="animation-delay: 1s"
-        height="1000px"
-      >
+      <div class="section animate-slideInLeft" style="animation-delay: 1s">
         <img src="./images/IMG_3897 2.JPG" alt="Sherlock Holmes Birthplace" />
         <div>
           <h2>Birthplace</h2>
@@ -500,41 +110,36 @@
         </div>
       </div>
     </div>
-    <!-- -------------------------footer----------------------- -->
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
-          <!-- Left Column -->
           <div class="fade-in">
             <p class="footer-text">
               This site is a tribute to the detective who captured my heart with
               his sharp mind, thrilling adventures, and unforgettable mysteries.
-              Whether you’re already a fan or just curious, I hope you’ll enjoy
+              Whether you're already a fan or just curious, I hope you'll enjoy
               exploring the world of Sherlock Holmes with me.
             </p>
           </div>
-
-          <!-- Middle Column -->
           <div class="fade-in">
             <h3>Content</h3>
             <ul class="footer-links">
               <li><a href="#">About</a></li>
               <li><a href="#">Sherlock's Life</a></li>
-              <li><a href="#">Sharlock Holmes Effect</a></li>
+              <li><a href="#">Sherlock Holmes Effect</a></li>
               <li><a href="#">The Art of Deduction</a></li>
             </ul>
           </div>
-
-          <!-- Right Column -->
           <div class="fade-in">
             <h3>Information</h3>
             <ul class="footer-links">
               <li><a href="#">Contact me</a></li>
-              <li><a href="#">About me </a></li>
+              <li><a href="#">About me</a></li>
             </ul>
           </div>
         </div>
-
         <div class="footer-bottom fade-in">
           <div class="social">
             <span class="social-text">Let's be friends...</span>
@@ -545,15 +150,14 @@
               <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
-
           <div class="copyright">
             <p>© 2025 The Sherlock Holmes Company. All rights reserved.</p>
-            <p>Made With ❤️ By <a href="#">Neat</a></p>
+            <p>Made With ❤️ By <a href="#">Aseel</a></p>
           </div>
         </div>
       </div>
     </footer>
-    <!-- -------------------Scripts -------------------- -->
+
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         const intro = document.querySelector(".intro");
@@ -578,6 +182,5 @@
         });
       });
     </script>
-    <script src="./script.js"></script>
   </body>
 </html>
