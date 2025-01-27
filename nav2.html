@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav</title>
+    <style>
+       @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+      @font-face {
+        font-family: "Mythshire";
+        src: url("./mythshire-2023-11-27-05-26-20-utc/Fonts/TTF/Mythshire.ttf")
+          format("truetype");
+      }
+
+     body {
+        font-family: "Mythshire", sans-serif;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes glowPulse {
+        0% {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+        50% {
+          text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        100% {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      :root {
+        /* --primary-color: #1b1b1b; */
+        --primary-color: #000;
+        --accent-color: #d4a037;
+        --text-color: #e6be8a;
+        --background-color: #605442;
+        --basic-color: #fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* font-family: "Cinzel", serif; */
+        font-family: "Mythshire", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px; 
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Adjust based on your nav height */
+        left: 0;
+    }
+
+    ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+    
+    <nav>
+      <img src="./images/logo2.png" alt="Sherlock" class="logo" />
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sherlocks-life.html">Sherlock's Life</a></li>
+        <li><a href="famous-cases.html">Famous Cases</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="quotes.html">Quotes</a></li>
+      </ul>
+    </nav>
+    <script src="nav2.js"></script>
+  </body>
+</html>
