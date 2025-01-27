@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      header {
+        background: #35424a;
+        color: #ffffff;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #e8491d 3px solid;
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        color: #35424a;
+      }
+
+      .profile-photo {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 20px 0;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .passion-photo {
+        width: 2000px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .sherlock-photo {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      /* Animation classes */
+      .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in;
+      }
+
+      .fade-in.appear {
+        opacity: 1;
+      }
+
+      .slide-in {
+        transform: translateX(-100%);
+        transition: transform 1s ease-in;
+      }
+
+      .slide-in.appear {
+        transform: translateX(0);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+        }
+
+        .photo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-photo,
+        .passion-photo,
+        .sherlock-photo {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <pre></pre>
+    <div class="container">
+      <header>
+        <h1 class="fade-in">About Me</h1>
+      </header>
+      <main>
+        <section id="intro" class="fade-in">
+          <h2>Hi, I'm Aseel</h2>
+          <p>
+            I'm a Palestinian woman who loves creativity and storytelling. I've
+            worked as a graphic designer and filmmaker, turning ideas into art
+            that connects with people.
+          </p>
+          <img
+            src="./imgs/IMG_3895 2.JPG"
+            alt="Aseel's Photo"
+            class="profile-photo"
+          />
+        </section>
+        <section id="passions" class="slide-in">
+          <h2>My Passions</h2>
+          <p>
+            Art is my way of expressing myself. I love singing, playing music,
+            and painting, each helping me share different parts of my soul.
+          </p>
+          <div class="photo-grid">
+            <img
+              src="./imgs/IMG_3889.JPG"
+              alt="Singing"
+              class="passion-photo"
+            />
+            <img
+              src="./imgs/IMG_3889.JPG"
+              alt="Singing"
+              class="passion-photo"
+            />
+            <img
+              src="./imgs/IMG_3889.JPG"
+              alt="Singing"
+              class="passion-photo"
+            />
+          </div>
+        </section>
+        <section id="sherlock" class="fade-in">
+          <h2>Why Sherlock Holmes?</h2>
+          <p>
+            I first discovered Sherlock Holmes through the BBC's Sherlock
+            series, and Benedict Cumberbatch's performance made me fall in love
+            with the character. For me, Benedict will always be the perfect
+            Sherlock! After watching the series, I started reading Sir Arthur
+            Conan Doyle's books and became fascinated by Holmes' brilliance and
+            unique personality.
+          </p>
+          <p>
+            Sherlock Holmes inspires me because he's clever, determined, and
+            always curious. That's why I chose to dedicate this website to him,
+            the world's greatest detective.
+          </p>
+          <img
+            src="/placeholder.svg?height=400&width=600"
+            alt="Sherlock Holmes Photo"
+            class="sherlock-photo"
+          />
+        </section>
+      </main>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const faders = document.querySelectorAll(".fade-in");
+        const sliders = document.querySelectorAll(".slide-in");
+
+        const appearOptions = {
+          threshold: 0.5,
+          rootMargin: "0px 0px -100px 0px",
+        };
+
+        const appearOnScroll = new IntersectionObserver(
+          (entries, appearOnScroll) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              } else {
+                entry.target.classList.add("appear");
+                appearOnScroll.unobserve(entry.target);
+              }
+            });
+          },
+          appearOptions
+        );
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+
+        sliders.forEach((slider) => {
+          appearOnScroll.observe(slider);
+        });
+      });
+    </script>
+  </body>
+</html>

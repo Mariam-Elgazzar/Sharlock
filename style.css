@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@font-face {
+  font-family: "Mythshire";
+  src: url("./mythshire-2023-11-27-05-26-20-utc/Fonts/TTF/Mythshire.ttf")
+    format("truetype");
+}
+
+body {
+  font-family: "Mythshire", sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+}
+
+:root {
+  /* --primary-color: #1b1b1b; */
+  --primary-color: #000;
+  --accent-color: #d4a037;
+  --text-color: #e6be8a;
+  --background-color: #605442;
+  --basic-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: "Cinzel", serif; */
+  font-family: "Mythshire", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+header {
+  display: inline-block;
+}
+
+nav {
+  background-color: var(--background-color);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+h1 {
+  font-family: "Mythshire", sans-serif;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: glowPulse 3s infinite;
+}
+
+.hero {
+  font-family: "Cinzel", serif;
+  text-align: center;
+  padding: 4rem 0;
+  /* background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+    url("./images/hero.jpeg") center no-repeat; */
+  background: var(--primary-color);
+  margin-bottom: 4rem;
+  color: var(--basic-color);
+}
+.hero-content {
+  display: inline-block;
+  float: left;
+  max-width: 50%;
+  padding: 30px;
+}
+.hero h2 {
+  font-family: "Mythshire", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeIn 1s ease-out 1.5s both;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(15, 15, 15, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.content {
+  animation: fadeIn 1s ease-out;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  border-left: 4px solid var(--accent-color);
+  animation: fadeIn 1s ease-out;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 200px;
+  }
+}
+
+/* Page Transition Animation */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: 1000;
+  transform: translateX(100%);
+  animation: pageTransition 1s ease-in-out;
+}
+
+@keyframes pageTransition {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
