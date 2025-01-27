@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Sherlock Holmes</title>
+
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <nav>
+      <img src="./images/logo2.png" alt="Sherlock" class="logo" />
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sherlocks-life.html">Sherlock's Life</a></li>
+        <li><a href="cases.html">Famous Cases</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="quotes.html">Quotes</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <h1 class="page-title">About</h1>
+
+      <div class="content-grid">
+        <div class="text-content">
+          <section>
+            <h2 class="section-title">About Me</h2>
+            <p>
+              Hi, my name is Aseel, and I'm a Palestinian woman who loves
+              creativity and storytelling. I've worked as a
+              <span class="highlight">graphic designer</span> and
+              <span class="highlight">filmmaker</span>, turning ideas into art
+              that connects with people.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="section-title">My Passions</h2>
+            <p>
+              Art is my way of expressing myself. I love
+              <span class="highlight">singing, playing music, and painting</span
+              >, each helping me share different parts of my soul.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="section-title">Why Sherlock Holmes?</h2>
+            <p>
+              I first discovered Sherlock Holmes through the
+              <span class="highlight">BBC's Sherlock series</span>, and Benedict
+              Cumberbatch's performance made me fall in love with the character.
+            </p>
+            <p>
+              For me, Benedict will always be the perfect Sherlock! After
+              watching the series, I started reading
+              <span class="highlight">Sir Arthur Conan Doyle's books</span> and
+              became fascinated by Holmes' brilliance and unique personality.
+            </p>
+            <p>
+              Sherlock Holmes inspires me because he's clever, determined, and
+              always curious. That's why I chose to dedicate this website to
+              him, the world's greatest detective.
+            </p>
+          </section>
+        </div>
+
+        <div class="image-section">
+          <img src="images/sherlocked.png" alt="Sherlock Holmes BBC Series" />
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="fade-in">
+            <p class="footer-text">
+              This site is a tribute to the detective who captured my heart with
+              his sharp mind, thrilling adventures, and unforgettable mysteries.
+              Whether you're already a fan or just curious, I hope you'll enjoy
+              exploring the world of Sherlock Holmes with me.
+            </p>
+          </div>
+          <div class="fade-in">
+            <h3>Content</h3>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Sherlock's Life</a></li>
+              <li><a href="#">Sherlock Holmes Effect</a></li>
+              <li><a href="#">The Art of Deduction</a></li>
+            </ul>
+          </div>
+          <div class="fade-in">
+            <h3>Information</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact me</a></li>
+              <li><a href="#">About me</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom fade-in">
+          <div class="social">
+            <span class="social-text">Let's be friends...</span>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>© 2025 The Sherlock Holmes Company. All rights reserved.</p>
+            <p>Made With ❤️ By <a href="#">Aseel</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const intro = document.querySelector(".intro");
+        const sections = document.querySelectorAll(".section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.visibility = "visible";
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        [intro, ...sections].forEach((el) => {
+          el.style.visibility = "hidden";
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

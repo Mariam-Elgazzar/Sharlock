@@ -83,7 +83,7 @@ a {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #333;
+    background-color: var(--dark-bg-color);
     position: absolute;
     top: 60px; /* Adjust based on your nav height */
     left: 0;
@@ -97,101 +97,172 @@ a {
     display: flex;
   }
 }
-
-body {
-  line-height: 1.6;
-  color: var(--text-color);
-  background: var(--background-color);
+.container1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
 }
 
-a {
+.hero {
+  font-family: Georgia, serif;
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://source.unsplash.com/random/1920x1080/?victorian,london")
+      center/cover;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeIn 1s ease-out 1.5s both;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--basic-color);
   text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-img {
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  display: block;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.slider-section {
+  padding: 4rem 2rem; /* Added horizontal padding for spacing on the sides */
+  background-color: var(--primary-color);
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px; /* Restrict maximum width of the slider */
+  margin: 0 auto; /* Center the slider container */
+  padding: 0 2rem; /* Horizontal padding for inner spacing */
+}
+
+.slider-image {
+  width: 50%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 30px;
+.slider-text {
+  width: 50%;
+  padding-left: 2rem;
+  color: var(--text-color);
+}
+
+.slider-text h2 {
   font-size: 2rem;
-  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.card-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.card {
-  background-color: #ffffff39;
-  color: #000;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.card-content h1 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: var(--basic-color);
-}
-
-.card-content p {
-  font-size: 1rem;
-  color: var(--basic-color);
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
+.sherlock-cards {
+  padding: 4rem 2rem; /* Padding added to ensure spacing from the page edges */
   background-color: var(--background-color);
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: var(--text-color);
-}
-.imgg img {
-  height: 390px;
+.sherlock-cards h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
 }
 
-@media (min-width: 768px) {
-  .card-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Adjust for 3 cards per row */
+  gap: 2rem; /* Space between cards */
+  padding: 0 2rem; /* Padding on the sides of the grid */
+  max-width: 1200px; /* Restrict maximum width of the grid */
+  margin: 0 auto; /* Center the grid on the page */
+}
 
-  .card {
-    flex: 1 1 calc(48% - 10px);
-    margin-bottom: 20px;
-  }
+.sherlock-card {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sherlock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+}
+
+.sherlock-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sherlock-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: var(--accent-color);
+}
+
+.sherlock-card p {
+  font-size: 1rem;
+  margin: 0 1rem 1rem;
+  color: var(--text-color);
 }
 
 /* Footer styles */
@@ -294,5 +365,35 @@ img {
   }
   h1 {
     padding-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .main-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }
