@@ -168,6 +168,14 @@
       </div>
     </footer>
 
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- animation of all page -->
+    <div class="page-transition"></div>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const mobileMenu = document.getElementById("mobile-menu");
@@ -177,7 +185,79 @@
           navList.classList.toggle("active");
         });
       });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navList = document.getElementById("nav-list");
+
+        mobileMenu.addEventListener("click", () => {
+          navList.classList.toggle("active");
+        });
+
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Slider functionality
+        const sliderImg = document.getElementById("slider-img");
+        const sliderTitle = document.getElementById("slider-title");
+        const slides = [
+          {
+            image: "./images/IMG_3887.JPG",
+            title: "Unraveling mysteries with unparalleled deductive skills",
+          },
+          {
+            image: "./images/IMG_3897 2.JPG",
+            title: "Sherlock Holmes, the world's most famous detective",
+          },
+        ];
+        let currentSlide = 0;
+
+        function changeSlide() {
+          sliderImg.src = slides[currentSlide].image;
+          sliderTitle.textContent = slides[currentSlide].title;
+          currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        setInterval(changeSlide, 5000);
+      });
     </script>
+
     <script src="./script.js"></script>
   </body>
 </html>
