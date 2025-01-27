@@ -1,215 +1,481 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Famous Cases of Sherlock Holmes</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Georgia", serif;
+        background-color: #f0e6d2;
+        color: #333;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header {
+        background-color: #1a1a1a;
+        color: #f0e6d2;
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+      }
+      .case {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s, transform 1s;
+      }
+      .case h2 {
+        color: #8b0000;
+        border-bottom: 2px solid #8b0000;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      .case-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .case-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        align-self: center;
+        transition: transform 0.3s ease;
+      }
+      .case-image:hover {
+        transform: scale(1.05);
+      }
+      @media (min-width: 768px) {
+        .case-content {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+        .case-image {
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+      }
+      .fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .carousel-item-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0.7;
+        z-index: 1;
+      }
+      @media (max-width: 767px) {
+        .carousel-item-video {
+          display: none;
+        }
+        header {
+          background-image: url("https://sherlockholmes.com/cdn/shop/files/preview_images/fe8d7fbbfe914c5fa74020d1f4c240ea.thumbnail.0000000000.jpg?v=1697655974&width=960");
+          background-size: cover;
+          background-position: center;
+          height: 300px;
+        }
+        h1 {
+          padding-top: 120px;
+        }
+      }
+      .read-more {
+        background-color: #8b0000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .read-more:hover {
+        background-color: #6d0000;
+      }
+      .hidden-content {
+        display: none;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Famous Cases of Sherlock Holmes</h1>
+      <video
+        class="carousel-item-video"
+        autoplay
+        playsinline
+        loop
+        muted
+        preload="metadata"
+        aria-label=""
+        poster="https://sherlockholmes.com/cdn/shop/files/preview_images/fe8d7fbbfe914c5fa74020d1f4c240ea.thumbnail.0000000000.jpg?v=1697655974&width=960"
+      >
+        <source
+          src="https://sherlockholmes.com/cdn/shop/videos/c/vp/fe8d7fbbfe914c5fa74020d1f4c240ea/fe8d7fbbfe914c5fa74020d1f4c240ea.m3u8?v=0"
+          type="application/x-mpegURL"
+        />
+        <source
+          src="https://sherlockholmes.com/cdn/shop/videos/c/vp/fe8d7fbbfe914c5fa74020d1f4c240ea/fe8d7fbbfe914c5fa74020d1f4c240ea.HD-1080p-7.2Mbps-19598952.mp4?v=0"
+          type="video/mp4"
+        />
+      </video>
+    </header>
+    <div class="container">
+      <div class="case">
+        <h2>A Study in Scarlet</h2>
+        <div class="case-content">
+          <img
+            src="/placeholder.svg?height=400&width=300"
+            alt="A Study in Scarlet"
+            class="case-image"
+          />
+          <div>
+            <p>
+              For any new reader of Sherlock, A Study in Scarlet is undoubtedly
+              the place to start. There could be no better introduction than the
+              blind meeting of Mr. Holmes, amateur sleuth, and his new roommate,
+              Dr. John Watson.
+            </p>
+            <p>
+              They quickly learn about each other: Watson is neat, curious, good
+              at his work, but generally unremarkable. (Though he provides
+              Holmes his much-needed flattery.) Sherlock is utterly brilliant
+              when it comes to detective work, but ignorant of most other
+              subjects.
+            </p>
+            <div class="hidden-content">
+              <p>
+                He can be cold, aloof, and spectacularly arrogant, though very
+                rarely in a vindictive way. Watson, perhaps surprisingly to the
+                new Sherlockian, is pretty quickly revealed as the more likable
+                fellow.
+              </p>
+            </div>
+            <button class="read-more">Read More</button>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <h2>The Hound of Baskervilles</h2>
+        <div class="case-content">
+          <img
+            src="/placeholder.svg?height=400&width=300"
+            alt="The Hound of Baskervilles"
+            class="case-image"
+          />
+          <div>
+            <p>
+              While A Study in Scarlet serves as a great introduction to Holmes
+              and Watson, no story itself is as well done as The Hound of
+              Baskervilles. Using the length of a novel rather than just a short
+              story, and without the need for much expository ramp-up, Conan
+              Doyle is able to fully explore the depths of the most
+              head-scratching case in the series.
+            </p>
+            <p>
+              Sir Charles Baskerville is found dead near his manor in the craggy
+              moors of southern England. There's no outward evidence of murder,
+              but there are suspicious signs, including the frozen look of
+              horror on Baskerville's face.
+            </p>
+            <div class="hidden-content">
+              <p>
+                There aren't many clues to work from, except for an old legend
+                about a monstrous hound that has attacked Baskerville heirs for
+                generations.
+              </p>
+            </div>
+            <button class="read-more">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const cases = document.querySelectorAll(".case");
+        const readMoreButtons = document.querySelectorAll(".read-more");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        cases.forEach((caseElement) => {
+          observer.observe(caseElement);
+        });
+
+        readMoreButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const hiddenContent = button.previousElementSibling;
+            if (
+              hiddenContent.style.display === "none" ||
+              hiddenContent.style.display === ""
+            ) {
+              hiddenContent.style.display = "block";
+              button.textContent = "Read Less";
+            } else {
+              hiddenContent.style.display = "none";
+              button.textContent = "Read More";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Famous Cases of Sherlock Holmes</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f4f4f4;
+      :root {
+        --primary-green: #1b2e20;
+        --primary-parchment: #f5e6d3;
+        --text-dark: #1a1a1a;
+        --button-border: #000000;
+      }
+
+      body,
+      html {
         margin: 0;
         padding: 0;
+        font-family: "Georgia", serif;
+        background-color: var(--primary-parchment);
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-image: url("data:image/png;base64,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");
       }
 
-      .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-        padding: 20px;
-      }
-
-      header {
-        background: #35424a;
-        color: #ffffff;
-        padding-top: 30px;
-        min-height: 70px;
-        border-bottom: #e8491d 3px solid;
+      .nav-bar {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 15px 0;
         text-align: center;
       }
 
-      h1,
-      h2 {
-        color: #35424a;
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
       }
 
-      .profile-photo {
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin: 20px 0;
-      }
-
-      .photo-grid {
+      .case-section {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-top: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+        align-items: start;
       }
 
-      .passion-photo {
-        width: 2000px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-
-      .sherlock-photo {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        border-radius: 10px;
-        margin: 20px 0;
-      }
-
-      /* Animation classes */
-      .fade-in {
-        opacity: 0;
-        transition: opacity 1s ease-in;
-      }
-
-      .fade-in.appear {
-        opacity: 1;
-      }
-
-      .slide-in {
-        transform: translateX(-100%);
-        transition: transform 1s ease-in;
-      }
-
-      .slide-in.appear {
-        transform: translateX(0);
-      }
-
-      /* Responsive design */
       @media (max-width: 768px) {
-        .container {
-          width: 95%;
-        }
-
-        .photo-grid {
+        .case-section {
           grid-template-columns: 1fr;
         }
+      }
 
-        .profile-photo,
-        .passion-photo,
-        .sherlock-photo {
-          width: 100%;
-          height: auto;
-        }
+      .case-content {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s, transform 1s;
+      }
+
+      .case-content.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .case-title {
+        font-size: 2.5em;
+        color: var(--primary-green);
+        margin-bottom: 20px;
+      }
+
+      .case-text {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+      }
+
+      .case-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .find-out-more {
+        display: inline-block;
+        padding: 10px 40px;
+        border: 2px solid var(--button-border);
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: background-color 0.3s;
+        position: relative;
+      }
+
+      .find-out-more::after {
+        content: "→";
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .find-out-more:hover {
+        background-color: var(--primary-green);
+        color: white;
+      }
+
+      .hidden-content {
+        display: none;
+        margin-top: 20px;
       }
     </style>
-    <title>Document</title>
   </head>
   <body>
-    <pre></pre>
+    <div class="nav-bar">• FAMOUS CASES •</div>
+
     <div class="container">
-      <header>
-        <h1 class="fade-in">About Me</h1>
-      </header>
-      <main>
-        <section id="intro" class="fade-in">
-          <h2>Hi, I'm Aseel</h2>
-          <video class="carousel-item-video" autoplay="" playsinline="" loop="" muted="" preload="metadata" aria-label="" poster="//sherlockholmes.com/cdn/shop/files/preview_images/fe8d7fbbfe914c5fa74020d1f4c240ea.thumbnail.0000000000.jpg?v=1697655974&amp;width=960" style="height: 550px; opacity: 0.7;">
-                                        
-            <source data-src="//sherlockholmes.com/cdn/shop/videos/c/vp/fe8d7fbbfe914c5fa74020d1f4c240ea/fe8d7fbbfe914c5fa74020d1f4c240ea.m3u8?v=0" type="application/x-mpegURL" src="//sherlockholmes.com/cdn/shop/videos/c/vp/fe8d7fbbfe914c5fa74020d1f4c240ea/fe8d7fbbfe914c5fa74020d1f4c240ea.m3u8?v=0">
-        
-            <source data-src="//sherlockholmes.com/cdn/shop/videos/c/vp/fe8d7fbbfe914c5fa74020d1f4c240ea/fe8d7fbbfe914c5fa74020d1f4c240ea.HD-1080p-7.2Mbps-19598952.mp4?v=0" type="video/mp4" src="//sherlockholmes.com/cdn/shop/videos/c/vp/fe8d7fbbfe914c5fa74020d1f4c240ea/fe8d7fbbfe914c5fa74020d1f4c240ea.HD-1080p-7.2Mbps-19598952.mp4?v=0">
-        
-        
-            <img src="//sherlockholmes.com/cdn/shop/files/preview_images/fe8d7fbbfe914c5fa74020d1f4c240ea.thumbnail.0000000000.jpg?v=1697655974&amp;width=960" width="960" height="540" alt="" loading="eager">
-        
-    </video>
-          <p>
-            I'm a Palestinian woman who loves creativity and storytelling. I've
-            worked as a graphic designer and filmmaker, turning ideas into art
-            that connects with people.
-          </p>
-          <img
-            src="./imgs/IMG_3895 2.JPG"
-            alt="Aseel's Photo"
-            class="profile-photo"
-          />
-        </section>
-        <section id="passions" class="slide-in">
-          <h2>My Passions</h2>
-          <p>
-            Art is my way of expressing myself. I love singing, playing music,
-            and painting, each helping me share different parts of my soul.
-          </p>
-          <div class="photo-grid">
-            <img
-              src="./imgs/IMG_3889.JPG"
-              alt="Singing"
-              class="passion-photo"
-            />
-            <img
-              src="./imgs/IMG_3889.JPG"
-              alt="Singing"
-              class="passion-photo"
-            />
-            <img
-              src="./imgs/IMG_3889.JPG"
-              alt="Singing"
-              class="passion-photo"
-            />
+      <div class="case-section">
+        <div class="case-content">
+          <h2 class="case-title">A Study in Scarlet</h2>
+          <div class="case-text">
+            <p>
+              For any new reader of Sherlock, A Study in Scarlet is undoubtedly
+              the place to start. There could be no better introduction than the
+              blind meeting of Mr. Holmes, amateur sleuth, and his new roommate,
+              Dr. John Watson.
+            </p>
+            <p>
+              They quickly learn about each other: Watson is neat, curious, good
+              at his work, but generally unremarkable. (Though he provides
+              Holmes his much-needed flattery.)
+            </p>
+            <div class="hidden-content">
+              <p>
+                Sherlock is utterly brilliant when it comes to detective work,
+                but ignorant of most other subjects. He can be cold, aloof, and
+                spectacularly arrogant, though very rarely in a vindictive way.
+                Watson, perhaps surprisingly to the new Sherlockian, is pretty
+                quickly revealed as the more likable fellow.
+              </p>
+            </div>
           </div>
-        </section>
-        <section id="sherlock" class="fade-in">
-          <h2>Why Sherlock Holmes?</h2>
-          <p>
-            I first discovered Sherlock Holmes through the BBC's Sherlock
-            series, and Benedict Cumberbatch's performance made me fall in love
-            with the character. For me, Benedict will always be the perfect
-            Sherlock! After watching the series, I started reading Sir Arthur
-            Conan Doyle's books and became fascinated by Holmes' brilliance and
-            unique personality.
-          </p>
-          <p>
-            Sherlock Holmes inspires me because he's clever, determined, and
-            always curious. That's why I chose to dedicate this website to him,
-            the world's greatest detective.
-          </p>
-          <img
-            src="/placeholder.svg?height=400&width=600"
-            alt="Sherlock Holmes Photo"
-            class="sherlock-photo"
-          />
-        </section>
-      </main>
+          <button class="find-out-more">Find out more</button>
+        </div>
+        <img
+          src="/placeholder.svg?height=400&width=600"
+          alt="A Study in Scarlet"
+          class="case-image"
+        />
+      </div>
+
+      <div class="case-section">
+        <div class="case-content">
+          <h2 class="case-title">The Hound of Baskervilles</h2>
+          <div class="case-text">
+            <p>
+              While A Study in Scarlet serves as a great introduction to Holmes
+              and Watson, no story itself is as well done as The Hound of
+              Baskervilles. Using the length of a novel rather than just a short
+              story, Conan Doyle is able to fully explore the depths of the most
+              head-scratching case in the series.
+            </p>
+            <p>
+              Sir Charles Baskerville is found dead near his manor in the craggy
+              moors of southern England. There's no outward evidence of murder,
+              but there are suspicious signs, including the frozen look of
+              horror on Baskerville's face.
+            </p>
+            <div class="hidden-content">
+              <p>
+                There aren't many clues to work from, except for an old legend
+                about a monstrous hound that has attacked Baskerville heirs for
+                generations.
+              </p>
+            </div>
+          </div>
+          <button class="find-out-more">Find out more</button>
+        </div>
+        <img
+          src="/placeholder.svg?height=400&width=600"
+          alt="The Hound of Baskervilles"
+          class="case-image"
+        />
+      </div>
     </div>
+
     <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
-        const faders = document.querySelectorAll(".fade-in");
-        const sliders = document.querySelectorAll(".slide-in");
+      document.addEventListener("DOMContentLoaded", () => {
+        const caseContents = document.querySelectorAll(".case-content");
+        const findOutMoreButtons = document.querySelectorAll(".find-out-more");
 
-        const appearOptions = {
-          threshold: 0.5,
-          rootMargin: "0px 0px -100px 0px",
-        };
-
-        const appearOnScroll = new IntersectionObserver(
-          (entries, appearOnScroll) => {
+        const observer = new IntersectionObserver(
+          (entries) => {
             entries.forEach((entry) => {
-              if (!entry.isIntersecting) {
-                return;
-              } else {
-                entry.target.classList.add("appear");
-                appearOnScroll.unobserve(entry.target);
+              if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
               }
             });
           },
-          appearOptions
+          { threshold: 0.1 }
         );
 
-        faders.forEach((fader) => {
-          appearOnScroll.observe(fader);
+        caseContents.forEach((content) => {
+          observer.observe(content);
         });
 
-        sliders.forEach((slider) => {
-          appearOnScroll.observe(slider);
+        findOutMoreButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const hiddenContent =
+              button.parentElement.querySelector(".hidden-content");
+            if (
+              hiddenContent.style.display === "none" ||
+              hiddenContent.style.display === ""
+            ) {
+              hiddenContent.style.display = "block";
+              button.textContent = "Show less";
+            } else {
+              hiddenContent.style.display = "none";
+              button.textContent = "Find out more";
+            }
+          });
         });
       });
     </script>
