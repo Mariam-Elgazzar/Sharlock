@@ -152,10 +152,10 @@
           <!-- Left Column -->
           <div class="fade-in">
             <p class="footer-text">
-              This site is a tribute to the detective who captured my heart with
-              his sharp mind, thrilling adventures, and unforgettable mysteries.
-              Whether you’re already a fan or just curious, I hope you’ll enjoy
-              exploring the world of Sherlock Holmes with me.
+              The Sherlock Holmes Company is a participant in the Amazon
+              Services LLC Associates Program, an affiliate advertising program
+              designed to provide a means for sites to earn advertising fees by
+              advertising and linking to SherlockHolmes.co.uk.
             </p>
           </div>
 
@@ -175,7 +175,7 @@
             <h3>Information</h3>
             <ul class="footer-links">
               <li><a href="#">Contact me</a></li>
-              <li><a href="about.html">About me </a></li>
+              <li><a href="#">About me </a></li>
             </ul>
           </div>
         </div>
@@ -193,12 +193,16 @@
 
           <div class="copyright">
             <p>© 2025 The Sherlock Holmes Company. All rights reserved.</p>
-            <p>Made With ❤️ By <a href="#">Neat</a></p>
+            <p>Made With ❤️ By <a href="#">Assel</a></p>
           </div>
         </div>
       </div>
     </footer>
-
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <script src="./script.js"></script>
 
     <script>
@@ -240,18 +244,20 @@
       });
     </script>
     <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
 
-      menuToggle.addEventListener('click', () => {
-          menuToggle.classList.toggle('active');
-          navMenu.classList.toggle('active');
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
       });
 
-      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-          menuToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-      }));
-  </script>
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
   </body>
 </html>

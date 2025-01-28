@@ -10,38 +10,38 @@
   <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-          <img src="./images/logo1.png" alt="Sherlock" class="logo" />
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="sherlocks-life.html" class="nav-link">Sherlock's Life</a>
-            </li>
-            <li class="nav-item">
-              <a href="cases.html" class="nav-link">Famous Cases</a>
-            </li>
-            <li class="nav-item">
-              <a href="media.html" class="nav-link">Media</a>
-            </li>
-            <li class="nav-item">
-              <a href="blog.html" class="nav-link">Blogs</a>
-            </li>
-            <li class="nav-item">
-              <a href="quotes.html" class="nav-link">Quotes</a>
-            </li>
-          </ul>
-          <div class="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+      <div class="nav-container">
+        <img src="./images/logo1.png" alt="Sherlock" class="logo" />
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="sherlocks-life.html" class="nav-link">Sherlock's Life</a>
+          </li>
+          <li class="nav-item">
+            <a href="cases.html" class="nav-link">Famous Cases</a>
+          </li>
+          <li class="nav-item">
+            <a href="media.html" class="nav-link">Media</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a href="quotes.html" class="nav-link">Quotes</a>
+          </li>
+        </ul>
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <!-- Header -->
     <header>
@@ -130,14 +130,17 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
+          <!-- Left Column -->
           <div class="fade-in">
             <p class="footer-text">
-              This site is a tribute to the detective who captured my heart with
-              his sharp mind, thrilling adventures, and unforgettable mysteries.
-              Whether you're already a fan or just curious, I hope you'll enjoy
-              exploring the world of Sherlock Holmes with me.
+              The Sherlock Holmes Company is a participant in the Amazon
+              Services LLC Associates Program, an affiliate advertising program
+              designed to provide a means for sites to earn advertising fees by
+              advertising and linking to SherlockHolmes.co.uk.
             </p>
           </div>
+
+          <!-- Middle Column -->
           <div class="fade-in">
             <h3>Content</h3>
             <ul class="footer-links">
@@ -147,14 +150,17 @@
               <li><a href="blog.html">The Art of Deduction</a></li>
             </ul>
           </div>
+
+          <!-- Right Column -->
           <div class="fade-in">
             <h3>Information</h3>
             <ul class="footer-links">
               <li><a href="#">Contact me</a></li>
-              <li><a href="about.html">About me</a></li>
+              <li><a href="#">About me </a></li>
             </ul>
           </div>
         </div>
+
         <div class="footer-bottom fade-in">
           <div class="social">
             <span class="social-text">Let's be friends...</span>
@@ -165,14 +171,19 @@
               <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
+
           <div class="copyright">
             <p>© 2025 The Sherlock Holmes Company. All rights reserved.</p>
-            <p>Made With ❤️ By <a href="#">Aseel</a></p>
+            <p>Made With ❤️ By <a href="#">Assel</a></p>
           </div>
         </div>
       </div>
     </footer>
-
+<!-- Font Awesome for social icons -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         const intro = document.querySelector(".intro");
@@ -198,18 +209,20 @@
       });
     </script>
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
 
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
     </script>
   </body>
 </html>
