@@ -143,14 +143,8 @@ img {
 }
 
 .quote-content {
-  /*  */
-
-  /* background-repeat: space;/ */
-  /* background-color: white; */
-  /* color: #fff; */
   height: 250px;
   padding: 40px;
-  /* border: 1px solid var(--button-border); */
   position: relative;
   margin-bottom: 30px;
   align-content: center;
