@@ -8,22 +8,37 @@
   </head>
   <body>
     <nav>
-      <img src="./images/logo1.png" alt="Sherlock" class="logo" />
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <div class="nav-container">
+        <img src="./images/logo1.png" alt="Sherlock" class="logo" />
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="sherlocks-life.html" class="nav-link">Sherlock's Life</a>
+          </li>
+          <li class="nav-item">
+            <a href="cases.html" class="nav-link">Famous Cases</a>
+          </li>
+          <li class="nav-item">
+            <a href="media.html" class="nav-link">Media</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a href="quotes.html" class="nav-link">Quotes</a>
+          </li>
+        </ul>
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
-
-      <ul id="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="sherlocks-life.html">Sherlock's Life</a></li>
-        <li><a href="cases.html">Famous Cases</a></li>
-        <li><a href="media.html">Media</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="quotes.html">Quotes</a></li>
-      </ul>
     </nav>
 
     <div class="container">
@@ -169,6 +184,22 @@
           });
         });
       });
+    </script>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
     </script>
   </body>
 </html>
