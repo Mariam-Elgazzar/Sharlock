@@ -162,7 +162,7 @@ nav {
   font-family: Georgia, serif;
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.122), rgba(0, 0, 0, 0.473)),
     url("https://source.unsplash.com/random/1920x1080/?victorian,london")
       center/cover;
   margin-bottom: 4rem;
