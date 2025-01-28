@@ -314,7 +314,7 @@ h1 {
 }
 
 @media (max-width: 767px) {
-  .carousel-item-video {
+  /* .carousel-item-video {
     display: none;
   }
   header {
@@ -322,7 +322,7 @@ h1 {
     background-size: cover;
     background-position: center;
     height: 300px;
-  }
+  } */
   h1 {
     left: 20%;
   }
